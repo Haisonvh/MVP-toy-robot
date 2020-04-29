@@ -5,11 +5,11 @@ Project overview
 This project is simulating the toy robot which can move on a table (initialized with the space 5x5, The origin (0,0) can be considered to be the SOUTH WEST most corner) based on the command line from a user. The robot will not start the moving process until it receives a valid starting point(the location is on the table). It will step forward only if this step doesn't let it fall from the table.
 
 -- Command line description --
-	PLACE X,Y,F
-    MOVE
-    LEFT
-    RIGHT
-    REPORT
+PLACE X,Y,F
+MOVE
+LEFT
+RIGHT
+REPORT
 
 - PLACE will put or relocate the toy robot on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST.
 - MOVE will move the toy robot one unit forward in the direction it is currently facing.
