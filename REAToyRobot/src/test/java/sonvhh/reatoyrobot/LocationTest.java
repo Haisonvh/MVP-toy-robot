@@ -21,11 +21,18 @@ public class LocationTest {
     
     public LocationTest() {
     }
-    
+    Location target;
+    @BeforeEach
+    public void setUp(){
+        target = new Location();
+    }
+    @AfterEach
+    public void tearDown() {
+        target = null;
+    }
     @DisplayName("Should initialize a location point with value (-1,-1)")
     @Test
     public void shouldSuccessfullyInitializeLocation(){
-        Location target = new Location();
         assertEquals(-1, target.getX());
         assertEquals(-1, target.getY());
     }
@@ -33,7 +40,6 @@ public class LocationTest {
     @DisplayName("Should set X value successfully")
     @Test
     public void shouldSuccessfullysetX(){
-        Location target = new Location();
         target.setX(0);
         assertEquals(0, target.getX());
         assertEquals(-1, target.getY());
@@ -42,7 +48,6 @@ public class LocationTest {
     @DisplayName("Should set Y value successfully")
     @Test
     public void shouldSuccessfullysetY(){
-        Location target = new Location();
         target.setY(0);
         assertEquals(-1, target.getX());
         assertEquals(0, target.getY());

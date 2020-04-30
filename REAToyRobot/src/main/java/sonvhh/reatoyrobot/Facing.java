@@ -29,12 +29,14 @@ public class Facing {
     /**
      * Set the name of the facing and base on this name, 
      * set the name of the facing in the left hand side and right side
-     * @param name name of facing which is define in Constants class
-     * @throws IllegalArgumentException 
-     * @see Constants
+     * @param name name of facing which is define in Constants class    
+     * @throws IllegalArgumentException when name is not is "NORTH","SOUTH","EAST", or "WEST"
+     * @throws NullPointerException when name is null
+     *  @see Constants
      */
-    public void setName(String name) throws IllegalArgumentException{
-        
+    public void setName(String name) throws IllegalArgumentException,NullPointerException{
+        if (name == null)
+            throw new NullPointerException(Constants.ERROR_NULL_FACING_NAME);
         switch (name) {
             case Constants.EAST_FACING :
                 this.leftSideName = Constants.NORTH_FACING;
@@ -53,7 +55,7 @@ public class Facing {
                 this.rightSideName = Constants.WEST_FACING;
                 break;
             default:
-                throw new IllegalArgumentException(Constants.ERROR_ILLEGAL_FACING_NAME);
+                throw new IllegalArgumentException(Constants.ERROR_INVALID_FACING_NAME);
         }
         this.name = name;
     }

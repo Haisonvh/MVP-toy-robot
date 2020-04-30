@@ -3,6 +3,8 @@
  */
 package sonvhh.reatoyrobot;
 
+import sonvhh.utilities.Constants;
+
 /**
  * This class represents the table of in which the robot will move on.
  * It has 2 field width and length. It will be initialized with width = 5 and length=5 
@@ -19,11 +21,15 @@ public class Table {
         length = 5;
     }
     
-    public void setWidth(int width) {
+    public void setWidth(int width) throws IllegalArgumentException{
+        if(width<=0)
+            throw new IllegalArgumentException(Constants.ERROR_NEGATIVE_VALUE);
         this.width = width;
     }
 
-    public void setLength(int length) {
+    public void setLength(int length) throws IllegalArgumentException{
+        if(length<=0)
+            throw new IllegalArgumentException(Constants.ERROR_NEGATIVE_VALUE);
         this.length = length;
     }
     

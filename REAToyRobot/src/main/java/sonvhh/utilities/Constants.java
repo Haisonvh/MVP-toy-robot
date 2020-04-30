@@ -16,6 +16,12 @@ public final class Constants {
     public static final String WEST_FACING = "WEST";
     
     //error message
-    public static final String ERROR_ILLEGAL_FACING_NAME = "This name is invalid";
-    
+    public static final String ERROR_INVALID_FACING_NAME = "This facing name is invalid";
+    public static final String ERROR_NULL_FACING_NAME = "Name cannot be null";
+    public static final String ERROR_NEGATIVE_VALUE = "Value must be greater than 0";
+    public static final String ERROR_LOCATION_INVALID = "The location is out of table";    
+    public static final String ERROR_NO_TABLE = "The table is not set up";
+    public static final String ERROR_NULL_TABLE = "The table is not null";
+    public static final String ERROR_NULL_LOCATION = "Please place robot on table first";
+    public static final String ERROR_NULL_FACING = "Facing is null";
 }

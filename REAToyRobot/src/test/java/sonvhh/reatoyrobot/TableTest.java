@@ -6,14 +6,14 @@
 package sonvhh.reatoyrobot;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
+import sonvhh.utilities.Constants;
 
 /**
  *
@@ -23,11 +23,18 @@ public class TableTest {
     
     public TableTest() {
     }
-    
-    @DisplayName("Should initialize a table with width and length equa (5,5)")
+    Table target;
+    @BeforeEach
+    public void setUp(){
+        target = new Table();
+    }
+    @AfterEach
+    public void tearDown() {
+        target = null;
+    }
+    @DisplayName("Should initialize a table with width and length equal (5,5)")
     @Test
     public void shouldSuccessfullyInitializeTable(){
-        Table target = new Table();
         assertEquals(5, target.getWidth());
         assertEquals(5, target.getLength());
     }
@@ -35,7 +42,6 @@ public class TableTest {
     @DisplayName("Should set Width value successfully")
     @Test
     public void shouldSuccessfullySetWidth(){
-        Table target = new Table();
         target.setWidth(10);
         assertEquals(10, target.getWidth());
         assertEquals(5, target.getLength());
@@ -44,7 +50,6 @@ public class TableTest {
     @DisplayName("Should set Legnth value successfully")
     @Test
     public void shouldSuccessfullysetY(){
-        Table target = new Table();
         target.setLength(10);
         assertEquals(5, target.getWidth());
         assertEquals(10, target.getLength());
@@ -54,7 +59,6 @@ public class TableTest {
     @ParameterizedTest
     @CsvSource({"0,0","4,0","2,0","0,4","0,2","3,2"})
     public void shouldValidLocationOnTable(int x, int y){
-        Table target = new Table();
         assertTrue(target.validLocation(x, y));
     }
     
@@ -62,7 +66,22 @@ public class TableTest {
     @ParameterizedTest
     @CsvSource({"-1,0","5,0","0,6","0,-2","-3,-2"})
     public void shouldUnValidLocationOutOfTable(int x, int y){
-        Table target = new Table();
         assertFalse(target.validLocation(x, y));
+    }
+    
+    @DisplayName("Should throw exception when set width with invalid value")
+    @ParameterizedTest
+    @ValueSource(ints = {0,-1})
+    public void shouldExceptionSetInvalidWidth(int width){
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> target.setWidth(width));
+        assertEquals(Constants.ERROR_NEGATIVE_VALUE, exception.getMessage());
+    }
+    
+    @DisplayName("Should throw exception when set length with invalid value")
+    @ParameterizedTest
+    @ValueSource(ints = {0,-1})
+    public void shouldExceptionSetInvalidLength(int length){
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> target.setLength(length));
+        assertEquals(Constants.ERROR_NEGATIVE_VALUE, exception.getMessage());
     }
 }

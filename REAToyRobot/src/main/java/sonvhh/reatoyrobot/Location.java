@@ -20,7 +20,7 @@ public class Location {
         y = -1;
     }
     
-    public int getX() {
+    public int getX(){
         return x;
     }
 
