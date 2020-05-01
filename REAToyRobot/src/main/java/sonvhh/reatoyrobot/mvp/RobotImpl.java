@@ -28,13 +28,13 @@ public class RobotImpl implements Robot{
         north.setName(Constants.NORTH_FACING);
         facingMap.put(Constants.NORTH_FACING,north);
         Facing west = new Facing();
-        north.setName(Constants.WEST_FACING);
+        west.setName(Constants.WEST_FACING);
         facingMap.put(Constants.WEST_FACING,west);
         Facing south = new Facing();
-        north.setName(Constants.SOUTH_FACING);
+        south.setName(Constants.SOUTH_FACING);
         facingMap.put(Constants.SOUTH_FACING,south);
         Facing east = new Facing();
-        north.setName(Constants.EAST_FACING);
+        east.setName(Constants.EAST_FACING);
         facingMap.put(Constants.EAST_FACING,east);
     }
     
@@ -70,7 +70,11 @@ public class RobotImpl implements Robot{
 
     @Override
     public String report() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String response = Constants.ERROR_ROBOT_NOT_ON_TBLE;
+        if (this.location != null && this.facing != null) {
+            response = this.location.getX()+","+this.location.getY()+","+this.facing.getName();
+        }
+        return response;
     }
 
     @Override

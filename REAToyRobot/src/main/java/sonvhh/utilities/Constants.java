@@ -24,4 +24,5 @@ public final class Constants {
     public static final String ERROR_NULL_TABLE = "The table is not null";
     public static final String ERROR_NULL_LOCATION = "Please place robot on table first";
     public static final String ERROR_NULL_FACING = "Facing is null";
+    public static final String ERROR_ROBOT_NOT_ON_TBLE = "The robot is not on the table"; 
 }
