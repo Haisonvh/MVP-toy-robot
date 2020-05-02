@@ -25,17 +25,17 @@ public class RobotImpl implements Robot{
     public RobotImpl() {
         facingMap = new HashMap<>();
         Facing north = new Facing();
-        north.setName(Constants.NORTH_FACING);
-        facingMap.put(Constants.NORTH_FACING,north);
+        north.setName(Constants.FACING_NORTH);
+        facingMap.put(Constants.FACING_NORTH,north);
         Facing west = new Facing();
-        west.setName(Constants.WEST_FACING);
-        facingMap.put(Constants.WEST_FACING,west);
+        west.setName(Constants.FACING_WEST);
+        facingMap.put(Constants.FACING_WEST,west);
         Facing south = new Facing();
-        south.setName(Constants.SOUTH_FACING);
-        facingMap.put(Constants.SOUTH_FACING,south);
+        south.setName(Constants.FACING_SOUTH);
+        facingMap.put(Constants.FACING_SOUTH,south);
         Facing east = new Facing();
-        east.setName(Constants.EAST_FACING);
-        facingMap.put(Constants.EAST_FACING,east);
+        east.setName(Constants.FACING_EAST);
+        facingMap.put(Constants.FACING_EAST,east);
     }
     
     @Override
@@ -85,19 +85,19 @@ public class RobotImpl implements Robot{
         //calculate next location
         Location nextStept = new Location();
         switch (facing.getName()){
-            case Constants.NORTH_FACING:
+            case Constants.FACING_NORTH:
                 nextStept.setY(location.getY()+1);
                 nextStept.setX(location.getX());
                 break;
-            case Constants.WEST_FACING:
+            case Constants.FACING_WEST:
                 nextStept.setY(location.getY());
                 nextStept.setX(location.getX()-1);
                 break;
-            case Constants.SOUTH_FACING:
+            case Constants.FACING_SOUTH:
                 nextStept.setY(location.getY()-1);
                 nextStept.setX(location.getX());
                 break;
-            case Constants.EAST_FACING:
+            case Constants.FACING_EAST:
                 nextStept.setY(location.getY());
                 nextStept.setX(location.getX()+1);
                 break;

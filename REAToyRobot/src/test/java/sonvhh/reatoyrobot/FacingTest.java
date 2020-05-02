@@ -34,38 +34,38 @@ public class FacingTest {
     @DisplayName("Should successfully set the name 'NORTH' with correct leftSideName:'WEST' and rightSideName:'EAST' ")
     @Test
     public void testSetNorthNameSuccessfully() {
-        target.setName(Constants.NORTH_FACING);
-        assertEquals(Constants.NORTH_FACING,target.getName());
-        assertEquals(Constants.WEST_FACING,target.getLeftSideName());
-        assertEquals(Constants.EAST_FACING,target.getRightSideName());
+        target.setName(Constants.FACING_NORTH);
+        assertEquals(Constants.FACING_NORTH,target.getName());
+        assertEquals(Constants.FACING_WEST,target.getLeftSideName());
+        assertEquals(Constants.FACING_EAST,target.getRightSideName());
     }
     
     
     @DisplayName("Should successfully set the name 'WEST' with correct leftSideName:'SOUTH' and rightSideName:'NORTH' ")
     @Test
     public void testSetWestNameSuccessfully() {
-        target.setName(Constants.WEST_FACING);
-        assertEquals(Constants.WEST_FACING,target.getName());
-        assertEquals(Constants.SOUTH_FACING,target.getLeftSideName());
-        assertEquals(Constants.NORTH_FACING,target.getRightSideName());
+        target.setName(Constants.FACING_WEST);
+        assertEquals(Constants.FACING_WEST,target.getName());
+        assertEquals(Constants.FACING_SOUTH,target.getLeftSideName());
+        assertEquals(Constants.FACING_NORTH,target.getRightSideName());
     }
     
     @DisplayName("Should successfully set the name 'SOUTH' with correct leftSideName:'EAST' and rightSideName:'WEST' ")
     @Test
     public void testSetSouthNameSuccessfully() {
-        target.setName(Constants.SOUTH_FACING);
-        assertEquals(Constants.SOUTH_FACING,target.getName());
-        assertEquals(Constants.EAST_FACING,target.getLeftSideName());
-        assertEquals(Constants.WEST_FACING,target.getRightSideName());
+        target.setName(Constants.FACING_SOUTH);
+        assertEquals(Constants.FACING_SOUTH,target.getName());
+        assertEquals(Constants.FACING_EAST,target.getLeftSideName());
+        assertEquals(Constants.FACING_WEST,target.getRightSideName());
     }
     
     @DisplayName("Should successfully set the name 'EAST' with correct leftSideName:'NORTH' and rightSideName:'SOUTH' ")
     @Test    
     public void testSetEastNameSuccessfully() {
-        target.setName(Constants.EAST_FACING);
-        assertEquals(Constants.EAST_FACING,target.getName());
-        assertEquals(Constants.NORTH_FACING,target.getLeftSideName());
-        assertEquals(Constants.SOUTH_FACING,target.getRightSideName());
+        target.setName(Constants.FACING_EAST);
+        assertEquals(Constants.FACING_EAST,target.getName());
+        assertEquals(Constants.FACING_NORTH,target.getLeftSideName());
+        assertEquals(Constants.FACING_SOUTH,target.getRightSideName());
     }
     
     @DisplayName("Should successfully set the name 'EAST' with correct leftSideName:'NORTH' and rightSideName:'SOUTH' ")

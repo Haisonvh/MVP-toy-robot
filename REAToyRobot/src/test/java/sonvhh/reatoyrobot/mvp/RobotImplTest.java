@@ -12,7 +12,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
 import sonvhh.reatoyrobot.Facing;
 import sonvhh.reatoyrobot.Location;
 import sonvhh.reatoyrobot.Table;
@@ -48,7 +47,7 @@ public class RobotImplTest {
    @Test
    public void shouldExceptionCallPlaceWithNullLocation(){
        target.setTable(table);
-       facing.setName(Constants.NORTH_FACING);
+       facing.setName(Constants.FACING_NORTH);
        NullPointerException exception = assertThrows(NullPointerException.class,() ->target.place(null, facing));
        assertEquals(Constants.ERROR_LOCATION_INVALID, exception.getMessage());
    }
@@ -69,7 +68,7 @@ public class RobotImplTest {
    @DisplayName("should throw exception when call place command before set table")
    @Test
    public void shouldExceptionCallPlaceBeforeSetTable(){
-       facing.setName(Constants.NORTH_FACING);
+       facing.setName(Constants.FACING_NORTH);
        location.setX(0);
        location.setY(0);
        NullPointerException exception = assertThrows(NullPointerException.class,() ->target.place(location, facing));
@@ -87,7 +86,7 @@ public class RobotImplTest {
    @DisplayName("should successfully call place command after set table")
    @Test
    public void shouldSuccessfullyCallPlaceAfterSetTable(){
-       facing.setName(Constants.NORTH_FACING);
+       facing.setName(Constants.FACING_NORTH);
        location.setX(0);
        location.setY(0);
        target.setTable(table);
@@ -105,7 +104,7 @@ public class RobotImplTest {
    @DisplayName("should successfully call turnLeft command after successfully call place command")
    @Test
    public void shouldSuccessfullyCallTurnLeftAfterPlace(){
-       facing.setName(Constants.NORTH_FACING);
+       facing.setName(Constants.FACING_NORTH);
        location.setX(0);
        location.setY(0);
        target.setTable(table);
@@ -130,7 +129,7 @@ public class RobotImplTest {
    @DisplayName("should successfully call turnRight command after successfully call place command")
    @Test
    public void shouldSuccessfullyCallTurnRightAfterPlace(){
-       facing.setName(Constants.NORTH_FACING);
+       facing.setName(Constants.FACING_NORTH);
        location.setX(0);
        location.setY(0);
        target.setTable(table);

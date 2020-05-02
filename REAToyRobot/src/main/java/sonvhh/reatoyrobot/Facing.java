@@ -38,21 +38,21 @@ public class Facing {
         if (name == null)
             throw new NullPointerException(Constants.ERROR_NULL_FACING_NAME);
         switch (name) {
-            case Constants.EAST_FACING :
-                this.leftSideName = Constants.NORTH_FACING;
-                this.rightSideName = Constants.SOUTH_FACING;
+            case Constants.FACING_EAST :
+                this.leftSideName = Constants.FACING_NORTH;
+                this.rightSideName = Constants.FACING_SOUTH;
                 break;
-            case Constants.NORTH_FACING :
-                this.leftSideName = Constants.WEST_FACING;
-                this.rightSideName = Constants.EAST_FACING;
+            case Constants.FACING_NORTH :
+                this.leftSideName = Constants.FACING_WEST;
+                this.rightSideName = Constants.FACING_EAST;
                 break;
-            case Constants.WEST_FACING :
-                this.leftSideName = Constants.SOUTH_FACING;
-                this.rightSideName = Constants.NORTH_FACING;
+            case Constants.FACING_WEST :
+                this.leftSideName = Constants.FACING_SOUTH;
+                this.rightSideName = Constants.FACING_NORTH;
                 break;
-            case Constants.SOUTH_FACING :
-                this.leftSideName = Constants.EAST_FACING;
-                this.rightSideName = Constants.WEST_FACING;
+            case Constants.FACING_SOUTH :
+                this.leftSideName = Constants.FACING_EAST;
+                this.rightSideName = Constants.FACING_WEST;
                 break;
             default:
                 throw new IllegalArgumentException(Constants.ERROR_INVALID_FACING_NAME);
