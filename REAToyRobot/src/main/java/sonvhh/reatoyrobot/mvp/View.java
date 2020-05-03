@@ -27,8 +27,7 @@ public interface View {
     public void updateView(String data) throws NullPointerException;
     
     /**
-     * This method allow view start to listen input from the user until user type 'EXIT'.
-     * Before starting listen, the view will print the welcome and also instruction.
+     * This method allow view start to listen input from the user until user type 'EXIT'.Before starting listen, the view will print the welcome and also instruction.
      * This listener will be simulated with a simple while loop
      */
     public void startListen();

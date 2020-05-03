@@ -70,7 +70,7 @@ public class RobotImpl implements Robot{
 
     @Override
     public String report() {
-        String response = Constants.ERROR_ROBOT_NOT_ON_TBLE;
+        String response = Constants.ERROR_NULL_LOCATION;
         if (this.location != null && this.facing != null) {
             response = this.location.getX()+","+this.location.getY()+","+this.facing.getName();
         }

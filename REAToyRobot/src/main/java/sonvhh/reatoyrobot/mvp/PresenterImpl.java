@@ -74,6 +74,7 @@ public class PresenterImpl implements Presenter {
                     } catch (NullPointerException ex){
                         view.updateView(ex.getMessage());
                     }
+                    break;
                 case Constants.COMMAND_REPORT:
                     try {
                         String response = model.report();
@@ -81,6 +82,7 @@ public class PresenterImpl implements Presenter {
                     } catch (NullPointerException ex){
                         view.updateView(ex.getMessage());
                     }
+                    break;
                 case Constants.COMMAND_RIGHT:
                     try {
                         model.turnRight();

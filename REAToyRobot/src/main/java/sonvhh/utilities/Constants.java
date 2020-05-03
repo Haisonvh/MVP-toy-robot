@@ -31,7 +31,6 @@ public final class Constants {
     public static final String ERROR_NULL_TABLE = "The table is not null";
     public static final String ERROR_NULL_LOCATION = "Please place robot on table first";
     public static final String ERROR_NULL_FACING = "Facing is null";
-    public static final String ERROR_ROBOT_NOT_ON_TBLE = "The robot is not on the table"; 
     public static final String ERROR_NULL_PRESENTER = "The presenter is null";
     public static final String ERROR_NULL_SHOWING_DATA = "The data cannot be null or ''";
     public static final String ERROR_NULL_COMMANDLINE = "The command line cannot be null or ''";

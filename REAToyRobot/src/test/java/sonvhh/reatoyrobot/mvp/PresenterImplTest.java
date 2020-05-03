@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import sonvhh.utilities.Constants;
 
 /**
  *
@@ -49,7 +50,7 @@ public class PresenterImplTest {
         assertNull(response);
     }
     
-    @DisplayName("Should return null when enter invalid command")
+    @DisplayName("Should return command name when enter valid command")
     @ParameterizedTest
     @ValueSource(strings = {"PLACE 1,2,NORTH","PLACE 1,2,EAST","PLACE 1,2,SOUTH"
             ,"PLACE 1,2,WEST","MOVE","RIGHT","REPORT","EXIT","LEFT"
@@ -60,4 +61,17 @@ public class PresenterImplTest {
         assertEquals(commandSplit[0],response);
     }
     
+    @DisplayName("Should throw exception when set null model")
+    @Test
+    public void shouldExceptionWhenSetNullModel(){
+        NullPointerException exception = assertThrows(NullPointerException.class, ()->target.setModel(null));
+        assertEquals(Constants.ERROR_NULL_MODEL, exception.getMessage());
+    }
+    
+    @DisplayName("Should throw exception when set null view")
+    @Test
+    public void shouldExceptionWhenSetNullView(){
+        NullPointerException exception = assertThrows(NullPointerException.class, ()->target.setView(null));
+        assertEquals(Constants.ERROR_NULL_VIEW, exception.getMessage());
+    }
 }

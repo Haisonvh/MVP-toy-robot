@@ -26,6 +26,6 @@ public class ToyRobotApp {
         presenter.setModel(model);
         presenter.setView(view);
         
-        view.startListen();
+        //view.startListen(System.in);
     }
 }
