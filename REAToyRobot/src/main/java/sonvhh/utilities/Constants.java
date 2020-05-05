@@ -36,7 +36,7 @@ public final class Constants {
     public static final String ERROR_NULL_COMMANDLINE = "The command line cannot be null or ''";
     public static final String ERROR_NULL_MODEL = "Model cannot be null";
     public static final String ERROR_NULL_VIEW = "View cannot be null";
-    public static final String ERROR_INVALID_COMMANDLINE = "The entered command line cannot be found";
+    public static final String ERROR_INVALID_COMMANDLINE = "The entered command line cannot be found or invalid";
     
     //annoucement message
     public static final String NOTICE_MOVE_SUCCESSFULLY = "The robot step forward successfully";

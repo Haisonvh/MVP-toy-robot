@@ -47,15 +47,19 @@ public class PresenterImpl implements Presenter {
         } else {
             switch (commandName) {
                 case Constants.COMMAND_PLACE:
-                    //parser to get parameters
-                    String[] commandElements = command.trim().split(" ");
-                    String[] params = commandElements[1].split(",");
-                    Location location = new Location();
-                    location.setX(Integer.parseInt(params[0]));
-                    location.setY(Integer.parseInt(params[1]));
-                    Facing facing = new Facing();
-                    facing.setName(params[2]);
-                    model.place(location, facing);
+                    try {
+                        //parser to get parameters
+                        String[] commandElements = command.trim().split(" ");
+                        String[] params = commandElements[1].split(",");
+                        Location location = new Location();
+                        location.setX(Integer.parseInt(params[0]));
+                        location.setY(Integer.parseInt(params[1]));
+                        Facing facing = new Facing();
+                        facing.setName(params[2]);
+                        model.place(location, facing);
+                    } catch (NullPointerException|IllegalArgumentException ex){
+                        view.updateView(ex.getMessage());
+                    }                    
                     break;                
                 case Constants.COMMAND_LEFT:
                     try {

@@ -24,8 +24,7 @@ public class ToyRobotApp {
         Robot model = new RobotImpl();
         Presenter presenter = new PresenterImpl();
         presenter.setModel(model);
-        presenter.setView(view);
-        
-        //view.startListen(System.in);
+        presenter.setView(view);        
+        view.startListen();
     }
 }

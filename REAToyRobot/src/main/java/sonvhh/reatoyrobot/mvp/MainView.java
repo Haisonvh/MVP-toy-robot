@@ -32,13 +32,12 @@ public class MainView implements View{
     @Override
     public void startListen() throws NullPointerException{
         if (presenter == null)
-            throw new NullPointerException(Constants.ERROR_NULL_PRESENTER);
-        //clear the console
-        System.out.print("\033[H\033[2J");  
-        System.out.flush();
+            throw new NullPointerException(Constants.ERROR_NULL_PRESENTER);     
+        
         Scanner scanner = new Scanner(System.in);
         
-        //print the welcome and instruction
+        //print the welcome and instruction        
+        System.out.println("------------------------------");
         System.out.println("Welcome to Toy Robot simulater");
         System.out.println("------------------------------");
         System.out.println("Using the command line to control the robot:");
