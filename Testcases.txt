@@ -1,0 +1,117 @@
+Testcases:
+### Testcase 1:
+  ABC
+  EXIT
+
+Expected output:
+  The entered command line cannot be found or invalid
+ 
+### Testcase 2:
+  PLACE 1,6,NORTH
+  EXIT
+
+Expected output:
+  The location is out of table
+  
+### Testcase 3:
+  PLACE 1,2,NORTH
+  MOVE
+  EXIT
+
+Expected output:
+  The robot step forward successfully
+
+### Testcase 4:
+  PLACE 0,0,WEST
+  MOVE
+  EXIT
+
+Expected output:
+  Next step is not safe
+
+### Testcase 5:
+  LEFT
+  EXIT
+
+Expected output:
+  Please place robot on table first
+  
+### Testcase 6:
+  PLACE 0,0,NORTH
+  MOVE
+  LEFT
+  REPORT
+  EXIT
+
+Expected output:
+  0,1,WEST
+  
+### Testcase 7:
+  PLACE 1,1,NORTH
+  LEFT 
+  MOVE
+  RIGHT
+  REPORT
+  EXIT
+
+Expected output:
+  0,1,NORTH
+
+### Testcase 8:
+  PLACE 1,1,NORTH
+  MOVE 
+  MOVE
+  REPORT
+  EXIT
+
+Expected output:
+  1,3,NORTH
+
+### Testcase 9:
+  PLACE 1,1,NORTH
+  LEFT 
+  MOVE
+  LEFT 
+  MOVE
+  REPORT
+  EXIT
+
+Expected output:
+  0,0,SOUTH
+  
+### Testcase 10:
+  PLACE 1,2,NORTH
+  RIGHT 
+  RIGHT
+  LEFT 
+  REPORT
+  EXIT
+
+Expected output:
+  1,2,EAST
+  
+### Testcase 11:
+  PLACE 1,1,NORTH
+  RIGHT 
+  MOVE
+  RIGHT 
+  MOVE
+  REPORT
+  EXIT
+
+Expected output:
+  2,0,SOUTH
+  
+### Testcase 12:
+  PLACE 1,1,NORTH
+  RIGHT 
+  MOVE
+  LEFT 
+  MOVE
+  REPORT
+  PLACE 0,0,NORTH
+  REPORT
+  EXIT
+
+Expected output:
+  0,0,NORTH
