@@ -29,21 +29,29 @@ REPORT
 Develop environment
 -------------------
 - Language: Java 8
-- IDE: Netbeans 8.2
-
+- IDE: Apache Netbeans 11.3
+- Maven: 3.3.9
 --------
 Testing
 --------
-
+Lib: JUnit 5
 -- Unit Test --
+Approach with a white box by using DD-Path testing.
+Approach with a white box by using PTV testing.
+
 -- Integration Test --
+Approach with MM-Path
+
 -- System Test --
+Running multi testing to check the output of the application
+
 
 ----------
 Versioning
 ----------
+Version 1.0 
 
 -------
 License
 -------
-
+REA Group
